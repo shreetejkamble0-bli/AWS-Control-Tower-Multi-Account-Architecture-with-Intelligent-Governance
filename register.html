@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AWS Control Tower - Register</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e3a8a,
+        #0ea5e9
+    );
+    overflow:hidden;
+    position:relative;
+}
+
+/* Background Animation */
+
+.bg span{
+    position:absolute;
+    display:block;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    animation:float 20s linear infinite;
+}
+
+.bg span:nth-child(1){
+    width:80px;
+    height:80px;
+    left:10%;
+    animation-delay:0s;
+}
+
+.bg span:nth-child(2){
+    width:50px;
+    height:50px;
+    left:30%;
+    animation-delay:4s;
+}
+
+.bg span:nth-child(3){
+    width:70px;
+    height:70px;
+    left:50%;
+    animation-delay:8s;
+}
+
+.bg span:nth-child(4){
+    width:100px;
+    height:100px;
+    left:70%;
+    animation-delay:2s;
+}
+
+.bg span:nth-child(5){
+    width:60px;
+    height:60px;
+    left:90%;
+    animation-delay:6s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) scale(1);
+        opacity:0;
+    }
+}
+
+/* Register Card */
+
+.container{
+    width:450px;
+    padding:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.10);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:
+    0 0 40px rgba(14,165,233,0.3),
+    0 0 80px rgba(14,165,233,0.2);
+    color:white;
+    z-index:10;
+}
+
+.logo{
+    text-align:center;
+    font-size:70px;
+    margin-bottom:10px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#dbeafe;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.input-box{
+    margin-bottom:18px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:6px;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.15);
+    color:white;
+    font-size:15px;
+}
+
+.input-box input::placeholder{
+    color:#cbd5e1;
+}
+
+.input-box input:focus{
+    box-shadow:0 0 20px #38bdf8;
+}
+
+.btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(
+        45deg,
+        #2563eb,
+        #38bdf8
+    );
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(56,189,248,0.8);
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(
+        45deg,
+        #f97316,
+        #fb923c
+    );
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.message{
+    margin-top:15px;
+    text-align:center;
+    font-weight:600;
+}
+
+.footer{
+    margin-top:20px;
+    text-align:center;
+    font-size:12px;
+    color:#cbd5e1;
+}
+
+</style>
+</head>
+<body>
+
+<div class="bg">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="container">
+
+    <div class="logo">📝</div>
+
+    <h1>Create Account</h1>
+
+    <p class="subtitle">
+        Register for AWS Control Tower Access
+    </p>
+
+    <form id="registerForm">
+
+        <div class="input-box">
+            <label>Full Name</label>
+            <input type="text" id="name" placeholder="Enter full name">
+        </div>
+
+        <div class="input-box">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="Enter email">
+        </div>
+
+        <div class="input-box">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Create password">
+        </div>
+
+        <div class="input-box">
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm password">
+        </div>
+
+        <button type="submit" class="btn">
+            🚀 Register Now
+        </button>
+
+        <button type="button"
+        class="login-btn"
+        onclick="window.location.href='NOTE.html'">
+            🔑 Back to Login
+        </button>
+
+    </form>
+
+    <div class="message" id="message"></div>
+
+    <div class="footer">
+        AWS Control Tower • Secure Registration
+    </div>
+
+</div>
+
+<script>
+
+document.getElementById("registerForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let confirmPassword = document.getElementById("confirmPassword").value.trim();
+    let message = document.getElementById("message");
+
+    if(name === "" || email === "" || password === "" || confirmPassword === ""){
+        message.style.color = "#fca5a5";
+        message.innerHTML = "❌ Please fill all fields";
+        return;
+    }
+
+    if(password !== confirmPassword){
+        message.style.color = "#fca5a5";
+        message.innerHTML = "❌ Passwords do not match";
+        return;
+    }
+
+    message.style.color = "#86efac";
+    message.innerHTML = "✅ Registration Successful";
+
+    setTimeout(function(){
+        window.location.href = "welcome AWT.html";
+    },1500);
+
+});
+
+</script>
+
+</body>
+</html>
